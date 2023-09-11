@@ -66,7 +66,7 @@ function calculateResult() {
         currentNumber = String(parseFloat(previousNumber) % parseFloat(currentNumber));
         break;
     }
-    result.textContent = currentNumber;
+    result.textContent = parseFloat(currentNumber).toLocaleString();
     
   }
   currentOperator = "=";
@@ -108,4 +108,3 @@ function calculateResult() {
 
 
 
-// result.textContent = parseFloat(currentNumber).toLocaleString();
