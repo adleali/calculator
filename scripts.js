@@ -23,10 +23,10 @@ function handleNumbers() {
 //   }
 //   result.textContent = currentOperator;
 // }
+
 // operatorButton.forEach((button) => {
 //   button.addEventListener("click", handleOperators);
 // });
-
 buttons.forEach((button) => {
   button.addEventListener("click", handleNumbers);
 });
@@ -73,6 +73,7 @@ function calculateResult() {
         break;
     }
     result.textContent = currentNumber;
+    
   }
   currentOperator = "=";
 }
@@ -82,3 +83,28 @@ equalButton.addEventListener("click", calculateResult);
 
 const clearButton = document.querySelector("#calculator button.operator.row1");
 clearButton.addEventListener("click", reset);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// result.textContent = parseFloat(currentNumber).toLocaleString();
