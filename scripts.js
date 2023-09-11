@@ -1,6 +1,12 @@
 const buttons = document.querySelectorAll("#calculator button.number");
-// const operatorButton = document.querySelectorAll("#calculator .operator");
 const result = document.querySelector("#calculator .result");
+
+const clearButton = document.querySelector("#calculator button.operator.row1");
+clearButton.addEventListener("click", reset);
+
+const equalButton = document.querySelector("#calculator button.operator.equ");
+equalButton.addEventListener("click", calculateResult);
+
 let currentNumber = "0";
 let currentOperator = null;
 let previousNumber = null;
@@ -15,18 +21,6 @@ function handleNumbers() {
   result.textContent = currentNumber;
 }
 
-// function handleOperators() {
-//   if (currentOperator === "=") {
-//     currentOperator = this.textContent;
-//   } else {
-//     currentOperator += this.textContent;
-//   }
-//   result.textContent = currentOperator;
-// }
-
-// operatorButton.forEach((button) => {
-//   button.addEventListener("click", handleOperators);
-// });
 buttons.forEach((button) => {
   button.addEventListener("click", handleNumbers);
 });
@@ -59,14 +53,14 @@ function calculateResult() {
       case "+":
         currentNumber = String(parseFloat(previousNumber) + parseFloat(currentNumber));
         break;
-      case "-":
-        currentNumber = String(parseFloat(previousNumber) - parseFloat(currentNumber));
-        break;
-      case "*":
-        currentNumber = String(parseFloat(previousNumber) * parseFloat(currentNumber));
-        break;
-      case "/":
-        currentNumber = String(parseFloat(previousNumber) / parseFloat(currentNumber));
+        case "-":
+          currentNumber = String(parseFloat(previousNumber) - parseFloat(currentNumber));
+          break;
+          case "*":
+            currentNumber = String(parseFloat(previousNumber) * parseFloat(currentNumber));
+            break;
+        case "/":
+          currentNumber = String(parseFloat(previousNumber) / parseFloat(currentNumber));
         break;
       case "%":
         currentNumber = String(parseFloat(previousNumber) % parseFloat(currentNumber));
@@ -78,20 +72,27 @@ function calculateResult() {
   currentOperator = "=";
 }
 
-const equalButton = document.querySelector("#calculator button.operator.equ");
-equalButton.addEventListener("click", calculateResult);
-
-const clearButton = document.querySelector("#calculator button.operator.row1");
-clearButton.addEventListener("click", reset);
 
 
 
 
 
+// const operatorButton = document.querySelectorAll("#calculator .operator");
 
 
 
+// function handleOperators() {
+//   if (currentOperator === "=") {
+//     currentOperator = this.textContent;
+//   } else {
+//     currentOperator += this.textContent;
+//   }
+//   result.textContent = currentOperator;
+// }
 
+// operatorButton.forEach((button) => {
+//   button.addEventListener("click", handleOperators);
+// });
 
 
 
