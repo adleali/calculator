@@ -1,8 +1,10 @@
 const buttons = document.querySelectorAll("#calculator button.number");
+// const operatorButton = document.querySelectorAll("#calculator .operator");
 const result = document.querySelector("#calculator .result");
 let currentNumber = "0";
 let currentOperator = null;
 let previousNumber = null;
+
 
 function handleNumbers() {
   if (currentNumber === "0" || currentOperator === "=") {
@@ -13,9 +15,22 @@ function handleNumbers() {
   result.textContent = currentNumber;
 }
 
+// function handleOperators() {
+//   if (currentOperator === "=") {
+//     currentOperator = this.textContent;
+//   } else {
+//     currentOperator += this.textContent;
+//   }
+//   result.textContent = currentOperator;
+// }
+// operatorButton.forEach((button) => {
+//   button.addEventListener("click", handleOperators);
+// });
+
 buttons.forEach((button) => {
   button.addEventListener("click", handleNumbers);
 });
+
 
 function reset() {
   currentNumber = "0";
@@ -33,8 +48,10 @@ operatorButtons.forEach((button) => {
     currentOperator = button.textContent;
     previousNumber = currentNumber;
     currentNumber = "0";
+    result.textContent = previousNumber + " " + currentOperator;
   });
 });
+
 
 function calculateResult() {
   if (previousNumber !== null && currentOperator !== null) {
