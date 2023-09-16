@@ -5,7 +5,7 @@ const clearButton = document.querySelector("#calculator button.operator.row1");
 clearButton.addEventListener("click", reset);
 
 const equalButton = document.querySelector("#calculator button.operator.equ");
-equalButton.addEventListener("click", calculateResult);
+equalButton.addEventListener("click", calculateRsult);
 
 let currentNumber = "0";
 let currentOperator = null;
